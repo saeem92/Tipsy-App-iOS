@@ -32,9 +32,9 @@ class CalculatorViewController: UIViewController {
         // We are adding isselected here it is helping us to have a background and appear selected when we press a button.
         tenPctButton.isSelected = false
         twentyPctButton.isSelected = false
-        
         //Make the button that triggered the IBAction selected.
                 sender.isSelected = true
+        
                 
                 //Get the current title of the button that was pressed.
                 let buttonTitle = sender.currentTitle!
@@ -78,14 +78,22 @@ class CalculatorViewController: UIViewController {
                  let result = billTotal * (1 + tip) / Double(numberOfPeople)
                  
                  //Round the result to 2 decimal places and turn it into a String.
-                 let resultTo2DecimalPlaces = String(format: "%.2f", result)
+                 
                  finalResult = String(format: "%.2f", result)
              }
         //In Main.storyboard there is a segue between CalculatorVC and ResultsVC with the identifier "goToResults".
                //This line triggers the segue to happen.
                self.performSegue(withIdentifier: "goToResults", sender: self)
     }
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToResults" {
+            
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.result = finalResult
+            destinationVC.tip = Int(tip * 100)
+            destinationVC.split = numberOfPeople
+        }
+    }
 }
 
