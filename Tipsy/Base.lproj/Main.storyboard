@@ -204,6 +204,7 @@
                         <outlet property="tenPctButton" destination="7y6-Kf-yF0" id="Pc4-th-pjH"/>
                         <outlet property="twentyPctButton" destination="UtR-dU-EKt" id="gfu-zU-ukg"/>
                         <outlet property="zeroPctButton" destination="XzR-0E-Xf7" id="0GZ-bQ-vFK"/>
+                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="goToResults" modalPresentationStyle="fullScreen" id="2sL-7G-C6O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -299,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLi-Eb-NGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893" y="118"/>
+            <point key="canvasLocation" x="925" y="118"/>
         </scene>
     </scenes>
 </document>
